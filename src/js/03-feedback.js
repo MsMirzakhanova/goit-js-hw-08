@@ -31,9 +31,10 @@ function onTextareaInput(event) {
 function populateTextarea() {
     const savedMessage = localStorage.getItem(STORAGE_KEY);
     const parsedSavedMessage = JSON.parse(savedMessage);
-    if (formData = parsedSavedMessage) {
-        refs.textarea.value = parsedSavedMessage.message;
-        refs.input.value = parsedSavedMessage.email;
+    if (parsedSavedMessage) {
+        formData = parsedSavedMessage
+        refs.textarea.value = parsedSavedMessage.message || "";
+        refs.input.value = parsedSavedMessage.email || "";
     }
 };
 
